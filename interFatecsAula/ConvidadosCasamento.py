@@ -32,19 +32,14 @@ def TabelaConjuntos(noivo,noiva):
         print("\n".join(result))
         if x != "POR APENAS UM DELES":
             print('*')
-
 while True:
     convidados = input()
-    if convidados == "":
+    if convidados == "" or convidados == "ACABOU":
         TabelaVazia()
-        break
     else:
-        if convidados != 'ACABOU':
-            nome_convidado, quem_convidou = convidados.split(";")
-            if quem_convidou == "noivo":
-                convidados_noivo.add(nome_convidado)
-            else:
-                convidados_noiva.add(nome_convidado)
+        nome_convidado, quem_convidou = convidados.split(";")
+        if quem_convidou == "noivo":
+            convidados_noivo.add(nome_convidado)
         else:
-            break
-TabelaConjuntos(convidados_noivo, convidados_noiva)
+            convidados_noiva.add(nome_convidado)
+TabelaConjuntos(convidados_noivo,convidados_noiva)
