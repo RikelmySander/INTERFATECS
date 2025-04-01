@@ -1,18 +1,6 @@
 convidados_noiva = set()
 convidados_noivo = set()
 
-def TabelaVazia():
-    for i in "LISTA FINAL", "APENAS NOIVA", "APENAS NOIVO", "POR AMBOS","POR APENAS UM DELES":
-        if i != "POR APENAS UM DELES":
-            print("-" * 20)
-            print(i)
-            print("-" * 20)
-            print("*")
-        else:
-            print("-" * 20)
-            print(i)
-            print("-" * 20)
-
 def TabelaConjuntos(noivo,noiva):
     for x in "LISTA FINAL", "APENAS NOIVA", "APENAS NOIVO", "POR AMBOS","POR APENAS UM DELES":
         print("-" * 20)
