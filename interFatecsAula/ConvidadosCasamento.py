@@ -15,9 +15,9 @@ def TabelaVazia():
 
 def TabelaConjuntos(noivo,noiva):
     for x in "LISTA FINAL", "APENAS NOIVA", "APENAS NOIVO", "POR AMBOS","POR APENAS UM DELES":
-        print("-" * 30)
+        print("-" * 20)
         print(x)
-        print("-" * 30)
+        print("-" * 20)
         match x:
             case "LISTA FINAL":
                 result = sorted(noivo | noiva)
