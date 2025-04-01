@@ -29,17 +29,18 @@ def TabelaConjuntos(noivo,noiva):
                 result = sorted(noivo - noiva)
             case "POR APENAS UM DELES":
                 result = sorted(noivo ^ noiva)
-        print("\n".join(result))
+        if result:
+            print("\n".join(result))
         if x != "POR APENAS UM DELES":
             print('*')
+
 while True:
     convidados = input()
-    if convidados == "" or convidados == "ACABOU":
-        TabelaVazia()
+    if convidados == "ACABOU":
+        break
+    nome_convidado, quem_convidou = convidados.split(";")
+    if quem_convidou == "noivo":
+        convidados_noivo.add(nome_convidado)
     else:
-        nome_convidado, quem_convidou = convidados.split(";")
-        if quem_convidou == "noivo":
-            convidados_noivo.add(nome_convidado)
-        else:
-            convidados_noiva.add(nome_convidado)
+        convidados_noiva.add(nome_convidado)
 TabelaConjuntos(convidados_noivo,convidados_noiva)
