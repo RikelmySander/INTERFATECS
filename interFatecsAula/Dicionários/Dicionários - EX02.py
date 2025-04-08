@@ -8,49 +8,41 @@
 #          inserido.
 def exibe_funcionarios(funcionarios):
     print('-' * 40)
-
     print('REGISTROS DOS FUNCIONÁRIOS')
-
     print('-' * 40)
-
     for chave, valor in funcionarios.items():
         cpf = chave
-
         nome, salario = valor
-
         print(f'CPF: {cpf}\nNome: {nome}\nSalário: R$ {salario:.2f}')
-
-    print('-' * 40)
-def exibe_salario(funcionarios):
     print('-' * 40)
 
-    print('SALARIO TOTAL')
 
-    print('-' * 40)
-    total = 0
-    for chave, valor in funcionarios.items():
-        nome, salario = valor
-        total += salario
-
-    print(f'Salário total: R$ {total:.2f}')
-
-    print('-' * 40)
-
-funcionarios = dict()
-
-cpf = int(input('CPF? '))
-
-while cpf != 0:
-    nome = input('Nome? ')
-
-    salario = float(input('Salário? R$ '))
-
-    funcionarios[cpf] = [nome, salario]
-
-    print('-' * 30)
-
+def cria_funcionarios():
+    funcionarios = dict()
     cpf = int(input('CPF? '))
+    while cpf != 0:
+        nome = input('Nome? ')
+        salario = float(input('Salário? R$ '))
+        funcionarios[cpf] = [nome, salario]
+        print('-' * 30)
+        cpf = int(input('CPF? '))
+    return funcionarios
 
 
-exibe_funcionarios(funcionarios)
-exibe_salario(funcionarios)
+def folha_pagamento(funcionarios):
+    total = 0
+    print('-' * 40)
+    print('FOLHA DE PAGAMENTO')
+    print('-' * 40)
+    for nome, salario in funcionarios.values():
+        total += salario
+    print(f'TOTAL = {total:.2f}')
+
+
+def main():
+    funcionarios = cria_funcionarios()
+    exibe_funcionarios(funcionarios)
+    folha_pagamento(funcionarios)
+
+
+main()
