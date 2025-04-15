@@ -1,6 +1,6 @@
-def cr(n):
+def cp(n):
     if n == 0:
         return
-    cr(n-1)
+    cp(n-1)
     print(n)
-cr(3)
+cp(3)
